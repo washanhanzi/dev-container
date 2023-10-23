@@ -24,5 +24,6 @@ jobs:
               with:
                   context: .
                   push: true
-                  tags: washanhanzi/dev-container:base
+                  tags: washanhanzi/dev-container:base, washanhanzi/dev-container:latest
                   platforms: linux/amd64, linux/arm64
+
