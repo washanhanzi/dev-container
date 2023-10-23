@@ -35,18 +35,8 @@ RUN fc-cache -fv
 RUN sudo rm /usr/local/share/fonts/FiraCode.zip
 
 # power10k
-# RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-# RUN sed -i 's|ZSH_THEME="robbyrussell"|ZSH_THEME="powerlevel10k/powerlevel10k"|g' .zshrc
-
-# starship
-RUN mkdir /home/dev/tmp
-WORKDIR /home/dev/tmp
-RUN curl -sSo install.sh https://starship.rs/install.sh && \
-	chmod +x install.sh && \
-	sudo ./install.sh --yes && \
-	echo 'eval "$(starship init zsh)"' >> ~/.zshrc
-RUN rm -rf /home/dev/tmp
-WORKDIR /home/dev
+RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+RUN sed -i 's|ZSH_THEME="robbyrussell"|ZSH_THEME="powerlevel10k/powerlevel10k"|g' .zshrc
 
 # setup zsh
 COPY .zshrc .zshrc
