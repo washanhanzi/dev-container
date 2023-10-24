@@ -2,7 +2,7 @@ FROM debian:bookworm
 
 RUN apt-get update && \
 	apt-get upgrade -y && \
-	apt-get install -y zsh git curl ripgrep sudo locales neovim unzip fontconfig nodejs npm
+	apt-get install -y zsh git curl ripgrep sudo locales neovim unzip fontconfig nodejs npm cmake llvm clang
 
 # add user
 RUN adduser --disabled-password --gecos '' dev
